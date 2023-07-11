@@ -25,7 +25,7 @@ form.addEventListener('submit',(e)=>{
 
 
 socket.on('user-joined',name=>{
-    append('userjoind '+name,'center')
+    append('userjoined '+name,'center')
 })
 socket.on('receive',data=>{
     append(data.name+":"+data.massage,'left')
