@@ -1,8 +1,30 @@
 body{
     text-align: center;
 }
+header{
+    padding:30px;
+    /* background-color: rgb(12, 24, 33); */
+    border-bottom: 5px solid #993833;
+}
+.online{
+    margin-right: 10px;
+}
+.logo{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img{
+    height: 85px;
+    width: 85px;
+    border-radius: 60%;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIF.7r2Sd4C9Iz1pqSYKkQnCGA%26pid%3DApi&f=1&ipt=a978acf73cde2ee8cd18e630dece594ee6707784c3424b977e25366ac4c380b0&ipo=images);
+    background-size:cover;
+    margin-right: 20px;
+}
 h1{
-    color:brown
+    color:rgb(173, 24, 24);
 }
 h2{
     color:blueviolet
@@ -13,7 +35,17 @@ form{
     align-items: center;
 }
 form input{
+    text-align: center;
     font-size: 20px;
     width:400px;
     margin-bottom: 10px;
+}
+@media screen and (max-width:700px) {
+    input{
+        width:90%;
+        text-align: center;
+    }
+    .online{
+        display: none;
+    }
 }

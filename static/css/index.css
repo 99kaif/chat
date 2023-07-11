@@ -10,7 +10,7 @@ body{
 
 }
 header{
-    
+    padding:30px;
     /* background-color: rgb(12, 24, 33); */
     border-bottom: 5px solid #993833;
 }
@@ -19,12 +19,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
 }
-h1,h2{
+h1{
     color:rgb(173, 24, 24);
-    padding-left: 20px;
 }
 h2{
+    font-size: 30px;
+    color:#993833;
     text-align: center;
 }
 .logo-img{
@@ -42,12 +44,37 @@ h2{
     border:2px solid red;
     overflow-y: auto;
 }
+form{
+    text-align: center;
+}
+input{
+    width:50%;
+    text-align: center;
+}
+button{
+    width:50%;
+}
 @media screen and (max-width:700px) {
+    .online{
+        display: none;
+    }
     .container{
-        width:100%;
+        width: 90%;
         height: 500px;
     }
+    input{
+        width:90%;
+        text-align: center;
+    }
+    button{
+        width:90%;
+    }
     
+}
+h1,h2{
+    font-style: italic;
+    letter-spacing: 3px;
+    margin:10px;
 }
 .massage{
     display: inline-block;
@@ -78,9 +105,8 @@ h2{
     color:green;
     clear: both;
 }
-form{
-    text-align: center;
-}
+
+
 #input-msg{
     font-size: 35px;
 }
