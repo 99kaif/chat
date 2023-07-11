@@ -24,7 +24,7 @@ form.addEventListener('submit',(e)=>{
 // const name = prompt("enter your name");
 
 
-socket.on('user-joind',name=>{
+socket.on('user-joined',name=>{
     append('userjoind '+name,'center')
 })
 socket.on('receive',data=>{
