@@ -1,15 +1,27 @@
-const socket = io('http://localhost:5000')
+const socket = io('http://192.168.184.77:5000')
 
 const form = document.getElementById('form')
 const msginp = document.getElementById('input-msg')
 const msgcontainer = document.querySelector(".container")
 
-let append = (msg,position)=>{
+let append = (name,msg,position)=>{
     const msgelement = document.createElement('div')
-    msgelement.innerText = msg;
+    if (name==''){
+        msgelement.innerText = msg;
+    }
+    else{
+        const srn = document.createElement('div')
+        const massage = document.createElement('div')
+        srn.innerText = name
+        srn.classList.add('name')
+        massage.innerText = msg 
+        msgelement.append(name)
+        msgelement.append(massage)
+    }
     msgelement.classList.add('massage')
     msgelement.classList.add(position)
     msgcontainer.append(msgelement)
+    msgcontainer.scrollTop = msgcontainer.scrollHeight - msgcontainer.clientHeight;
 }
 
 socket.emit('new-usr-joined');
@@ -17,7 +29,7 @@ socket.emit('new-usr-joined');
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
     const massage = msginp.value 
-    append("you:"+massage,'right')
+    append("you",massage,'right')
     socket.emit('send',massage)
     msginp.value = ''
 })
@@ -25,8 +37,8 @@ form.addEventListener('submit',(e)=>{
 
 
 socket.on('user-joined',name=>{
-    append('userjoind '+name,'center')
+    append('','userjoind '+name,'center')
 })
 socket.on('receive',data=>{
-    append(data.name+":"+data.massage,'left')
+    append(data.name, data.massage,'left')
 })
