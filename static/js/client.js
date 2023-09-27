@@ -1,4 +1,4 @@
-const socket = io('http://192.168.184.77:5000')
+const socket = io('http://localhost:5000')
 
 const form = document.getElementById('form')
 const msginp = document.getElementById('input-msg')
